@@ -38,7 +38,7 @@ function setlocalstorage(name, valuess){
     const xdxdlololol = window.localStorage.setItem(name, valuess)
     return xdxdlololol
 }
-if (window.localStorage.getItem("username").length == 0){
+if (window.localStorage.getItem("username") == null){
     document.getElementById("namany").textContent = "belum login"
     const newel = document.createElement("option")
     newel.textContent = "sign up"
@@ -60,8 +60,8 @@ if (window.localStorage.getItem("username").length == 0){
     document.getElementById("divapainiya").append(newel)
     document.getElementById("divapainiya").addEventListener("change", () => {
         if (document.getElementById("divapainiya").value == "sign out"){
-            setlocalstorage("username", "")
-            setlocalstorage("password", "")
+            setlocalstorage("username", null)
+            setlocalstorage("password", null)
             window.location.reload()
         }
     })
